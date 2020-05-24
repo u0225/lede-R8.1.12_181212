@@ -724,7 +724,9 @@ TARGET_DEVICES += zbt-we826-32M
 
 define Device/zbt-wr8305rt
   DTS := ZBT-WR8305RT
+  IMAGE_SIZE := $(ralink_default_fw_size_16M)
   DEVICE_TITLE := Zbtlink ZBT-WR8305RT
+  DEVICE_PACKAGES := kmod-usb2 kmod-usb-ohci
 endef
 TARGET_DEVICES += zbt-wr8305rt
 
