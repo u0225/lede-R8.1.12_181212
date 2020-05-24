@@ -25,6 +25,12 @@ sed -i 's/\"services\"/\"nas\"/g' /usr/lib/lua/luci/controller/mjpg-streamer.lua
 sed -i 's/\"services\"/\"nas\"/g' /usr/lib/lua/luci/controller/p910nd.lua
 sed -i 's/\"services\"/\"nas\"/g' /usr/lib/lua/luci/controller/usb_printer.lua
 sed -i 's/\"services\"/\"nas\"/g' /usr/lib/lua/luci/controller/xunlei.lua
+<<<<<<< HEAD
+=======
+sed -i 's/\"services\"/\"nas\"/g' /usr/lib/lua/luci/controller/samba4.lua
+sed -i 's/invalid users = root/# invalid users = root/g' /etc/samba/smb.conf.template
+sed -i 's/'192.168.1.1'/'192.168.10.1'/g' /etc/config/network
+>>>>>>> c2a97d694864161f3a3284f00d115da75573b4c1
 
 sed -i 's/services/nas/g'  /usr/lib/lua/luci/view/minidlna_status.htm
 uci set minidlna.config.enabled=0
@@ -33,8 +39,14 @@ uci commit minidlna
 
 ln -sf /sbin/ip /usr/bin/ip
 
+<<<<<<< HEAD
 sed -i 's/downloads.openwrt.org/openwrt.proxy.ustclug.org/g' /etc/opkg/distfeeds.conf
 sed -i 's/root::0:0:99999:7:::/root:$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.:0:0:99999:7:::/g' /etc/shadow
+=======
+# sed -i 's/downloads.openwrt.org/openwrt.proxy.ustclug.org/g' /etc/opkg/distfeeds.conf
+# sed -i 's/root::0:0:99999:7:::/root:$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.:0:0:99999:7:::/g' /etc/shadow
+sed -i 's/root::0:0:99999:7:::/root:$1$0CVWiweD$4Xsq83ZIZtPJe8PVLfqJH0:16357:0:99999:7:::/g' /etc/shadow
+>>>>>>> c2a97d694864161f3a3284f00d115da75573b4c1
 
 sed -i "s/# //g" /etc/opkg/distfeeds.conf
 
@@ -65,6 +77,11 @@ sed -i 's/cbi.submit\"] = true/cbi.submit\"] = \"1\"/g' /usr/lib/lua/luci/dispat
 rm -rf /tmp/luci-modulecache/
 rm -f /tmp/luci-indexcache
 
+<<<<<<< HEAD
+=======
+echo 0xDEADBEEF > /etc/config/google_fu_mode
+
+>>>>>>> c2a97d694864161f3a3284f00d115da75573b4c1
 exit 0
 
 
